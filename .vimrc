@@ -10,6 +10,9 @@ Plugin 'scrooloose/syntastic.git'
 Plugin 'bling/vim-airline'
 Plugin 'tomasr/molokai'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'majutsushi/tagbar' " Requires http://ctags.sourceforge.net/
+Plugin 'tpope/vim-surround'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -32,3 +35,4 @@ let g:airline_powerline_fonts = 1
 let mapleader="\\"
 noremap <silent> <Leader>nt :NERDTreeToggle<CR>
 noremap <silent> <Leader>p :CtrlP<CR>
+noremap <silent> <Leader>t :TagbarToggle<CR>
