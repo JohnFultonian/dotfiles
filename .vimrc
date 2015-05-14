@@ -13,6 +13,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'majutsushi/tagbar' " Requires http://ctags.sourceforge.net/
 Plugin 'tpope/vim-surround'
+Plugin 'sjl/gundo.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -36,3 +37,22 @@ let mapleader="\\"
 noremap <silent> <Leader>nt :NERDTreeToggle<CR>
 noremap <silent> <Leader>p :CtrlP<CR>
 noremap <silent> <Leader>t :TagbarToggle<CR>
+noremap <silent> <Leader>u :GundoToggle<CR>
+
+
+"""""""""""""""""""""" AUTO COMMANDS """"""""""""""""""""""""""""
+
+autocmd InsertLeave * :GitGutterAll
+
+"""""""""""""""""" TAGS """""""""""""""""""""""""
+" GROOVY
+let g:tagbar_type_groovy = {
+    \ 'ctagstype' : 'groovy',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'c:class',
+        \ 'i:interface',
+        \ 'f:function',
+        \ 'v:variables',
+    \ ]
+\ }
