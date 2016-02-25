@@ -28,5 +28,5 @@ vim +PluginInstall +qall
 
 echo "Downloading powerline fonts"
 
-git clone git@github.com:powerline/fonts.git
+git clone https://github.com/powerline/fonts.git
 ./fonts/install.sh

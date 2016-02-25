@@ -14,6 +14,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'majutsushi/tagbar' " Requires http://ctags.sourceforge.net/
 Plugin 'tpope/vim-surround'
 Plugin 'sjl/gundo.vim'
+Plugin 'mileszs/ack.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
