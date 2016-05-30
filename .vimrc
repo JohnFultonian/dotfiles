@@ -41,8 +41,8 @@ set t_Co=256
 
 syntax enable
 set ttimeoutlen=50
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set number
 set cursorline
@@ -52,6 +52,7 @@ let g:airline_powerline_fonts = 1
 """""""""""""""""""""""""KEY BINDINGS""""""""""""""""""""""""""""""
 let mapleader="\\"
 noremap <silent> <Leader>nt :NERDTreeToggle<CR>
+noremap <silent> <Leader>fnt :NERDTreeFind<CR>
 noremap <silent> <Leader>p :CtrlP<CR>
 noremap <silent> <Leader>t :TagbarToggle<CR>
 noremap <silent> <Leader>u :GundoToggle<CR>

@@ -3,6 +3,13 @@ export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 export PATH="$PATH"
 export EDITOR=vim
+export GOPATH="$HOME/projects/go"
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+export SCALA_HOME="/opt/scala-2.11.8"
+export POSTGRES_HOME="/Applications/Postgres.app/Contents/Versions/9.5"
+export PATH="/usr/local/bin:$PATH:$SCALA_HOME/bin:$POSTGRES_HOME/bin"
+export EDITOR=vim
+export NODE_ENV="dev"
 alias ls='ls -GFh'
 alias l='ls '
 alias ll='ls -GFhal'
@@ -12,3 +19,13 @@ echo '        |       |'
 echo '         \/~V~\/ '
 echo ''
 echo ''
+[[ -f ~/.myobrc ]] && source ~/.myobrc
+alias gst="git status"
+alias gco="git checkout"
+alias gd="git diff"
+alias gp="echo 'REMEMBER TO'; echo '================================================'; echo '1) Check the build pipeline'; echo '2) Run the tests'; echo '3) Run style check'; echo '================================================'; sleep 2; git pull --rebase"
+alias gc="git commit -m"
+alias ga="git add"
+
+export NVM_DIR="/Users/johnfulton/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
