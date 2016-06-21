@@ -26,7 +26,7 @@ filetype plugin indent on    " required
 """""""""""""""""""""""CTRL P CONFIG""""""""""""""""""""""""""""""""""
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|dist|target|node_modules)$',
+  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|dist|target|node_modules|build)$',
   \ 'file': '\v\.(exe|so|dll|class|swp)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
@@ -48,6 +48,7 @@ set number
 set cursorline
 set laststatus=2
 let g:airline_powerline_fonts = 1
+set updatetime=250
 
 """""""""""""""""""""""""KEY BINDINGS""""""""""""""""""""""""""""""
 let mapleader="\\"
@@ -56,7 +57,10 @@ noremap <silent> <Leader>fnt :NERDTreeFind<CR>
 noremap <silent> <Leader>p :CtrlP<CR>
 noremap <silent> <Leader>t :TagbarToggle<CR>
 noremap <silent> <Leader>u :GundoToggle<CR>
-
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 """""""""""""""""""""" AUTO COMMANDS """"""""""""""""""""""""""""
 
