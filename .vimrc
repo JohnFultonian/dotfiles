@@ -3,7 +3,7 @@ filetype off                  " required
 
 call plug#begin()
 Plug 'gmarik/Vundle.vim'
-Plug 'scrooloose/nerdtree.git'
+Plug 'scrooloose/nerdtree'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -18,13 +18,14 @@ Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+
 """""Colour schemes""""
 Plug 'tomsik68/vim-crystallite'
 Plug 'tomasr/molokai'
 Plug 'sickill/vim-monokai'
 Plug 'jpo/vim-railscasts-theme'
 Plug 'bounceme/highwayman'
-Plug 'jethrovt/vim-basal-colorscheme'
+Plug 'jdsimcoe/basal.vim'
 Plug 'gummesson/stereokai.vim'
 Plug 'vim-scripts/sift'
 Plug 'lanox/lanox-vim-theme'
@@ -47,21 +48,12 @@ filetype plugin indent on    " required
 
 
 """""""""""""""""""""""Use AG if available""""""""""""""""""""""""""""""""""
+
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
-"""""""""""""""""""""""CTRL P CONFIG""""""""""""""""""""""""""""""""""
-
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|dist|target|node_modules|build)$',
-  \ 'file': '\v\.(exe|so|dll|class|swp)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_max_files=20000
 
 """""""""""""""""""""""SETTINGS""""""""""""""""""""""""""""""""""
-
 
 let g:jsx_ext_required = 0
 set t_Co=256
@@ -86,7 +78,7 @@ colorscheme basal
 let mapleader="\\"
 noremap <silent> <Leader>nt :NERDTreeToggle<CR>
 noremap <silent> <Leader>fnt :NERDTreeFind<CR>
-noremap <silent> <Leader>p :CtrlP<CR>
+noremap <silent> <Leader>p :FZF<CR>
 noremap <silent> <Leader>t :TagbarToggle<CR>
 noremap <silent> <Leader>u :GundoToggle<CR>
 nnoremap <C-J> <C-W><C-J>

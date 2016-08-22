@@ -10,6 +10,7 @@ export POSTGRES_HOME="/Applications/Postgres.app/Contents/Versions/9.5"
 export PATH="/usr/local/bin:$PATH:$SCALA_HOME/bin:$POSTGRES_HOME/bin"
 export EDITOR=vim
 export NODE_ENV="dev"
+export TERM="xterm-256color"
 alias ls='ls -GFh --color'
 alias l='ls '
 alias ll='ls -GFhal'
@@ -37,3 +38,5 @@ export NVM_DIR="/Users/johnfulton/.nvm"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
