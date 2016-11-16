@@ -1,37 +1,43 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree.git'
-Plugin 'kien/ctrlp.vim.git'
-Plugin 'bling/vim-airline'
-Plugin 'tomasr/molokai'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'majutsushi/tagbar' " Requires http://ctags.sourceforge.net/
-Plugin 'tpope/vim-surround'
-Plugin 'sjl/gundo.vim'
-Plugin 'fatih/vim-go'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'mileszs/ack.vim'
+call plug#begin()
+Plug 'gmarik/Vundle.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'bling/vim-airline'
+Plug 'tomasr/molokai'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'majutsushi/tagbar' " Requires http://ctags.sourceforge.net/
+Plug 'tpope/vim-surround'
+Plug 'sjl/gundo.vim'
+Plug 'fatih/vim-go'
+Plug 'derekwyatt/vim-scala'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'mileszs/ack.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'vim-scripts/vim-auto-save'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'mustache/vim-mustache-handlebars'
+"""""""""""""""""""""""COLOURS""""""""""""""""""""""""""""""""""
+Plug 'snowcrshd/cyberpunk.vim'
+Plug 'jdsimcoe/basal.vim'
+Plug 'euclio/vim-nocturne'
+Plug 'encody/vim-colors'
+Plug 'aliou/moriarty.vim'
 
-call vundle#end()            " required
+call plug#end()            " required
 filetype plugin indent on    " required
 
+colorscheme basal
 
-"""""""""""""""""""""""CTRL P CONFIG""""""""""""""""""""""""""""""""""
-
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|dist|target|node_modules|build)$',
-  \ 'file': '\v\.(exe|so|dll|class|swp)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_max_files=20000
 
 """""""""""""""""""""""SETTINGS""""""""""""""""""""""""""""""""""
 
@@ -49,18 +55,39 @@ set cursorline
 set laststatus=2
 let g:airline_powerline_fonts = 1
 set updatetime=250
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_smart_case = 1
+" Autosave
+let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 
 """""""""""""""""""""""""KEY BINDINGS""""""""""""""""""""""""""""""
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<S-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 let mapleader="\\"
 noremap <silent> <Leader>nt :NERDTreeToggle<CR>
 noremap <silent> <Leader>fnt :NERDTreeFind<CR>
-noremap <silent> <Leader>p :CtrlP<CR>
+noremap <silent> <Leader>p :FZF<CR>
 noremap <silent> <Leader>t :TagbarToggle<CR>
 noremap <silent> <Leader>u :GundoToggle<CR>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+noremap <silent> <C-U> :tabp<CR>
+noremap <silent> <C-D> :tabn<CR>
+noremap <silent> <leader>f :Ack<CR>
+noremap <C-J> <C-W><C-J>
+noremap <C-K> <C-W><C-K>
+noremap <C-L> <C-W><C-L>
+noremap <C-H> <C-W><C-H>
+noremap <Leader>cf :let @+= expand("%")<CR>
+vnoremap <C-F> y<ESC>/<c-r>"<CR>
+
+"""""""""""""""""""""""""SEARCH"""""""""""""""""""""""""""""
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 """""""""""""""""""""" AUTO COMMANDS """"""""""""""""""""""""""""
 
