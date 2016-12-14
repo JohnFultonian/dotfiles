@@ -26,6 +26,7 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'keith/swift.vim'
 """""""""""""""""""""""COLOURS""""""""""""""""""""""""""""""""""
 Plug 'snowcrshd/cyberpunk.vim'
 Plug 'jdsimcoe/basal.vim'

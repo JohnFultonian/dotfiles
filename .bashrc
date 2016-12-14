@@ -9,6 +9,7 @@ export PATH="/usr/local/bin:$PATH:$SCALA_HOME/bin:$POSTGRES_HOME/bin"
 export EDITOR=nvim
 export NODE_ENV="dev"
 export HISTCONTROL="ignoreboth"
+export XDG_CONFIG_HOME="$HOME/.config"
 alias ls='ls -GFh'
 alias l='ls '
 alias ll='ls -hal'
