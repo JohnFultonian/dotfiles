@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "This will replace existing .vimrc, .bash_profile, .bashrc and .git."
+echo "This will replace existing .vimrc, .bash_profile, .bashrc, .tmux.conf and .git."
 read -p "Are you sure? " -n 1 -r
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]
@@ -16,6 +16,7 @@ echo "Replacing dot files ...."
 ln -sf $SCRIPTPATH/.bashrc ~/.bashrc
 ln -sf $SCRIPTPATH/.bashrc ~/.bash_profile # To cater for Mac..
 ln -sf $SCRIPTPATH/.vimrc ~/.vimrc
+ln -sf $SCRIPTPATH/.tmux.conf ~/.tmux.conf
 ln -sf $SCIPTPATH/.git ~/.git
 
 echo "Setting up Vundle.."
