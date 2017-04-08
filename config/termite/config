@@ -1,0 +1,5 @@
+[options]
+font = Monospace 14px
+font = Source Code Pro for Powerline Light 28px
+[colors]
+background = rgba(20, 20, 20, 0.8)

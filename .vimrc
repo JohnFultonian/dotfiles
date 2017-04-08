@@ -19,8 +19,10 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug '907th/vim-auto-save'
+Plug 'valloric/youcompleteme'
 
 """""Colour schemes""""
+Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'tomsik68/vim-crystallite'
 Plug 'tomasr/molokai'
 Plug 'sickill/vim-monokai'
