@@ -18,6 +18,7 @@ Plug 'mileszs/ack.vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug '907th/vim-auto-save'
 
 """""Colour schemes""""
 Plug 'tomsik68/vim-crystallite'
@@ -69,10 +70,15 @@ set cursorline
 set laststatus=2
 let g:airline_powerline_fonts = 1
 set updatetime=250
+let g:auto_save = 1
+
 
 """""""""""""""""""""""""My favourite colour schemes"""""""""""""""""""""""""
 
 colorscheme basal
+" Preserve terminal background
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
 
 """""""""""""""""""""""""KEY BINDINGS""""""""""""""""""""""""""""""
 let mapleader="\\"
