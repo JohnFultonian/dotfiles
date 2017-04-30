@@ -1,0 +1,4 @@
+set global tabstop 2
+set global autoreload yes
+hook global WinCreate ^[^*]+$ %{ addhl number_lines -hlcursor }
+
