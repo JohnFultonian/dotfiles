@@ -20,6 +20,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug '907th/vim-auto-save'
 Plug 'valloric/youcompleteme'
+Plug 'udalov/kotlin-vim'
+Plug 'hashivim/vim-terraform'
+Plug 'Matt-Deacalion/vim-systemd-syntax'
 
 """""Colour schemes""""
 Plug 'tyrannicaltoucan/vim-quantum'
@@ -50,9 +53,13 @@ call plug#end()            " required
 filetype plugin indent on    " required
 
 
-"""""""""""""""""""""""Use AG if available""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""Use RG/AG if available""""""""""""""""""""""""""""""""""
 
-if executable('ag')
+if executable('rg')
+  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git/*"'
+  let g:ackprg = 'rg --vimgrep'
+elseif executable('ag')
+  let $FZF_DEFAULT_COMMAND = 'ag -g ""'
   let g:ackprg = 'ag --vimgrep'
 endif
 
