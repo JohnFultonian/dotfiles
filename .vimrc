@@ -4,7 +4,7 @@ filetype off                  " required
 call plug#begin()
 Plug 'gmarik/Vundle.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'bling/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar' " Requires http://ctags.sourceforge.net/
@@ -19,10 +19,17 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug '907th/vim-auto-save'
-Plug 'valloric/youcompleteme'
 Plug 'udalov/kotlin-vim'
 Plug 'hashivim/vim-terraform'
 Plug 'Matt-Deacalion/vim-systemd-syntax'
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 """""Colour schemes""""
 Plug 'tyrannicaltoucan/vim-quantum'
@@ -69,6 +76,7 @@ let g:jsx_ext_required = 0
 set t_Co=256
 
 syntax enable
+let g:deoplete#enable_at_startup = 1
 set background=dark
 set ttimeoutlen=50
 set tabstop=2
