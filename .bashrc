@@ -20,16 +20,15 @@ echo '        |       |'
 echo '         \/~V~\/ '
 echo ''
 echo ''
-[[ -f ~/.myobrc ]] && source ~/.myobrc
 alias gst="git status"
 alias gco="git checkout"
 alias gd="git diff"
-alias gp="echo 'REMEMBER TO'; echo '================================================'; echo '1) Check the build pipeline'; echo '2) Run the tests'; echo '3) Run style check'; echo '================================================'; sleep 2; git pull --rebase"
 alias gc="git commit -m"
 alias ga="git add"
 
 if type -P nvim > /dev/null; then
   alias vim="nvim"
+  alias nv="nvim"
 fi
 
 export NVM_DIR="/Users/johnfulton/.nvm"
