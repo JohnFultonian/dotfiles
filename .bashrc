@@ -8,7 +8,7 @@ export JAVA_HOME="/usr/lib/jvm/default"
 export SCALA_HOME="/opt/scala-2.11.8"
 export POSTGRES_HOME="/Applications/Postgres.app/Contents/Versions/9.5"
 export PATH="/usr/local/bin:$PATH:$SCALA_HOME/bin:$POSTGRES_HOME/bin"
-export EDITOR=vim
+export EDITOR=nvim
 export NODE_ENV="dev"
 export TERM="xterm-256color"
 alias ls='ls -GFh --color'
@@ -25,6 +25,9 @@ alias gco="git checkout"
 alias gd="git diff"
 alias gc="git commit -m"
 alias ga="git add"
+alias nvc="nvim ~/.config/nvim/init.vim"
+alias nvb="nvim ~/.bashrc"
+alias sudo="sudo -E "
 
 if type -P nvim > /dev/null; then
   alias vim="nvim"

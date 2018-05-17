@@ -3,7 +3,7 @@ filetype off                  " required
 
 call plug#begin()
 Plug 'gmarik/Vundle.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'francoiscabrol/ranger.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -54,6 +54,7 @@ Plug 'Elle518/Duna'
 Plug 'Valloric/vim-valloric-colorscheme'
 Plug 'aperezdc/vim-elrond'
 Plug 'geetarista/ego.vim'
+Plug 'tpope/vim-projectionist'
 
 
 call plug#end()            " required
@@ -71,6 +72,7 @@ elseif executable('ag')
 endif
 
 """""""""""""""""""""""SETTINGS""""""""""""""""""""""""""""""""""
+let g:ranger_replace_netrw = 1 " Use ranger when vim opens a directory
 
 let g:jsx_ext_required = 0
 set t_Co=256
@@ -83,11 +85,16 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set number
+set relativenumber
 set cursorline
 set laststatus=2
 let g:airline_powerline_fonts = 1
 set updatetime=250
 let g:auto_save = 1
+
+set undofile
+set undodir=~/.vim/undodir
+:silent call system('mkdir -p ' . &undodir)
 
 
 """""""""""""""""""""""""My favourite colour schemes"""""""""""""""""""""""""
@@ -98,10 +105,12 @@ highlight Normal ctermbg=none
 highlight NonText ctermbg=none
 
 """""""""""""""""""""""""KEY BINDINGS""""""""""""""""""""""""""""""
-let mapleader="\\"
-noremap <silent> <Leader>nt :NERDTreeToggle<CR>
-noremap <silent> <Leader>fnt :NERDTreeFind<CR>
-noremap <silent> <Leader>p :FZF<CR>
+let mapleader = " "
+let g:ranger_map_keys = 0
+
+
+noremap <silent> <Leader>r :Ranger<CR>
+noremap <silent> <Leader>f :FZF<CR>
 noremap <silent> <Leader>t :TagbarToggle<CR>
 noremap <silent> <Leader>u :GundoToggle<CR>
 nnoremap <C-J> <C-W><C-J>
